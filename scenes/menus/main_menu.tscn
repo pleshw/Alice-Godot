@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwjkjx6bh3nc8"]
+
+[ext_resource type="Script" path="res://scripts/godot/components/menus/MainMenu.cs" id="1_uiedy"]
+[ext_resource type="Theme" uid="uid://co4rualtfrkqj" path="res://themes/main_theme.tres" id="2_21h71"]
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("LoadGameButton", "NewGameButton", "OptionsButton", "QuitButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uiedy")
+LoadGameButton = NodePath("Panel/Buttons/Load Game")
+NewGameButton = NodePath("Panel/Buttons/New Game")
+OptionsButton = NodePath("Panel/Buttons/Options")
+QuitButton = NodePath("Panel/Buttons/Quit")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buttons" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 320.0
+offset_right = -792.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_21h71")
+alignment = 1
+
+[node name="Load Game" type="Button" parent="Panel/Buttons"]
+visible = false
+layout_mode = 2
+text = "Load Game"
+
+[node name="New Game" type="Button" parent="Panel/Buttons"]
+layout_mode = 2
+text = "New Game"
+
+[node name="Options" type="Button" parent="Panel/Buttons"]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="Panel/Buttons"]
+layout_mode = 2
+text = "Quit"

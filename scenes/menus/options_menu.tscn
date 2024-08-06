@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://hlul6amixa4n"]
+
+[ext_resource type="Theme" uid="uid://co4rualtfrkqj" path="res://themes/main_theme.tres" id="1_nyhtm"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nyhtm")
+
+[node name="Audio" type="VBoxContainer" parent="Panel/TabContainer"]
+layout_mode = 2
+
+[node name="Video" type="VBoxContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Controls (PC)" type="VBoxContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Controls (Console)" type="VBoxContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2

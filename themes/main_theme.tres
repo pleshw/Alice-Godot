@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://co4rualtfrkqj"]
+
+[resource]
+TabContainer/constants/icon_separation = 6
+TabContainer/constants/side_margin = 0
+TabContainer/font_sizes/font_size = 18
+VBoxContainer/constants/separation = 16
