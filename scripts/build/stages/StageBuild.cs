@@ -18,7 +18,7 @@ where T : StageComponent
 
   public T LoadFile()
   {
-    T? result = FileController.GetFileDeserialized<T>($"C:/Users/Usuário/Desktop/echo-box/data/stage/{Stage.UniqueName}/stage.json");
+    T result = FileController.GetFileDeserialized<T>($"C:/Users/Usuário/Desktop/echo-box/data/stage/{Stage.UniqueName}/stage.json");
 
     if (result != null)
     {

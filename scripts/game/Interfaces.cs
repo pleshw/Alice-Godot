@@ -499,7 +499,7 @@ public interface IEntityBehaviourComponent : IComponent, IHasPositionComponent, 
 {
   BehaviourType BehaviourType { get; set; }
 
-  IUniqueNameComponent? CurrentStage { get; set; }
+  IUniqueNameComponent CurrentStage { get; set; }
 
   void RunEntityBehaviour(BaseEntity entity);
 }
@@ -544,7 +544,7 @@ public interface IAttackParametersComponent : IComponent
 
   ElementalProperty ElementalProperty { get; set; }
 
-  IUniqueNameComponent? Target { get; set; }
+  IUniqueNameComponent Target { get; set; }
 }
 
 public interface IAnimatedBodyComponent : IComponent

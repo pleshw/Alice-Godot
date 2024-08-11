@@ -5,7 +5,7 @@ namespace Build;
 
 public class PlayerActorBuild : EntityActorBuild<PlayerEntity>
 {
-    private static PlayerEntity? _playerActor;
+    private static PlayerEntity _playerActor;
 
     public override PlayerEntity Actor
     {

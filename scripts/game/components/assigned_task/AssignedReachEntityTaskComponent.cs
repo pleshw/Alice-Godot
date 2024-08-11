@@ -9,7 +9,7 @@ public record class AssignedReachEntityTaskComponent : ReachEntityTaskComponent,
   {
     get
     {
-      BaseEntity? entity = GetGameEntity();
+      BaseEntity entity = GetGameEntity();
 
       if (entity == null)
       {
@@ -48,7 +48,7 @@ public record class AssignedReachEntityTaskComponent : ReachEntityTaskComponent,
     throw new NotImplementedException();
   }
 
-  public static BaseEntity? GetGameEntity()
+  public static BaseEntity GetGameEntity()
   {
     return null;
   }

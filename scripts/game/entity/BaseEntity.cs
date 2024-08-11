@@ -21,6 +21,15 @@ public abstract class BaseEntity : IUniqueNameComponent, IHasSaveFolderComponent
     }
   }
 
+  [JsonIgnore]
+  public Dictionary<Type, IComponent> ComponentDictionary
+  {
+    get
+    {
+      return _components;
+    }
+  }
+
   public BaseEntity(string uniqueName)
   {
     UniqueName = uniqueName;
@@ -49,7 +58,7 @@ public abstract class BaseEntity : IUniqueNameComponent, IHasSaveFolderComponent
 
   public T GetComponent<T>() where T : IComponent
   {
-    if (!_components.TryGetValue(typeof(T), out IComponent? component))
+    if (!_components.TryGetValue(typeof(T), out IComponent component))
     {
       throw new Exception($"Component {typeof(T)} does not exist in this entity. Entity Id: {UniqueName}");
     }

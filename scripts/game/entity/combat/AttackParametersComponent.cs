@@ -12,5 +12,5 @@ public class AttackParametersComponent : IAttackParametersComponent
 
   public required ElementalProperty ElementalProperty { get; set; }
 
-  public IUniqueNameComponent? Target { get; set; }
+  public IUniqueNameComponent Target { get; set; }
 }

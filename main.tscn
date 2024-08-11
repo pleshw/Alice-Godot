@@ -4,17 +4,28 @@
 [ext_resource type="PackedScene" uid="uid://dwjkjx6bh3nc8" path="res://scenes/menus/main_menu.tscn" id="1_11onv"]
 [ext_resource type="PackedScene" uid="uid://hlul6amixa4n" path="res://scenes/menus/options_menu.tscn" id="2_5oco4"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" node_paths=PackedStringArray("MainMenu")]
 script = ExtResource("1_6feqy")
+MainMenu = NodePath("")
 
-[node name="Menus" type="Node" parent="."]
+[node name="MenuContainer" type="Node" parent="."]
 
-[node name="MainMenu" parent="Menus" instance=ExtResource("1_11onv")]
-script = null
-
-[node name="OptionsMenu" parent="Menus" instance=ExtResource("2_5oco4")]
+[node name="MenuCanvas" type="CanvasLayer" parent="MenuContainer"]
 visible = false
 
-[node name="Game" type="Node" parent="."]
+[node name="MainMenu" parent="MenuContainer/MenuCanvas" instance=ExtResource("1_11onv")]
 
-[node name="Cutscenes" type="Node" parent="."]
+[node name="OptionsMenu" parent="MenuContainer/MenuCanvas" instance=ExtResource("2_5oco4")]
+visible = false
+
+[node name="GameContainer" type="Node" parent="."]
+
+[node name="GameCanvas" type="CanvasLayer" parent="GameContainer"]
+
+[node name="CutscenesContainer" type="Node" parent="."]
+
+[node name="CutscenesCanvas" type="CanvasLayer" parent="CutscenesContainer"]
+
+[node name="LoadScreenContainer" type="Node" parent="."]
+
+[node name="LoadScreenCanvas" type="CanvasLayer" parent="LoadScreenContainer"]

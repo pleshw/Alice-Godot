@@ -76,9 +76,9 @@ public static partial class FileController
 
   public static void CreateProjectFile(string folderPath, string fileName, string fileData) => CreateFile(folderPath, fileName, fileData);
 
-  public static T? GetProjectFileDeserialized<T>(string fileName) where T : class => GetFileDeserialized<T>(Path.Join(GodotUserFolder, fileName));
+  public static T GetProjectFileDeserialized<T>(string fileName) where T : class => GetFileDeserialized<T>(Path.Join(GodotUserFolder, fileName));
 
-  public static T? GetFileDeserialized<T>(string filePath) where T : class
+  public static T GetFileDeserialized<T>(string filePath) where T : class
   {
     if (!File.Exists(filePath))
     {
@@ -102,7 +102,7 @@ public static partial class FileController
 
   public static string CreateNewSaveFolder(string folderName)
   {
-    string? lastFolderWithSameName = GetLastSaveFolderName(GodotSavesFolder, folderName);
+    string lastFolderWithSameName = GetLastSaveFolderName(GodotSavesFolder, folderName);
 
     string newSaveFolderName = lastFolderWithSameName != null ? $"{folderName}{GetFolderNumber(lastFolderWithSameName) + 1}" : $"{folderName}0";
 
@@ -111,11 +111,11 @@ public static partial class FileController
     return folderPath;
   }
 
-  public static string? GetLastSaveFolderName(string folderPath, string folderName)
+  public static string GetLastSaveFolderName(string folderPath, string folderName)
   {
     string[] saveFolders = Directory.GetDirectories(folderPath, $"{folderName}*");
 
-    string? result = saveFolders.OrderByDescending(f => new DirectoryInfo(f).LastWriteTime).FirstOrDefault();
+    string result = saveFolders.OrderByDescending(f => new DirectoryInfo(f).LastWriteTime).FirstOrDefault();
 
     if (result is not null && !result.EndsWith('/'))
     {

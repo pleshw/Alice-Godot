@@ -1,15 +1,35 @@
 using Godot;
 using System;
 
-public partial class MainMenu : Control
+public partial class MainMenu : MenuControl
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+  [Export]
+  public Button LoadGameButton { get; set; }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+  [Export]
+  public Button NewGameButton { get; set; }
+
+  [Export]
+  public Button OptionsButton { get; set; }
+
+  [Export]
+  public Button QuitButton { get; set; }
+
+  public override void _Ready()
+  {
+    base._Ready();
+
+
+    NewGameButton.Pressed += () =>
+    {
+
+    };
+
+    OptionsButton.Pressed += () =>
+    {
+
+    };
+
+    QuitButton.Pressed += () => GetTree().Quit();
+  }
 }

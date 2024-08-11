@@ -6,7 +6,7 @@ namespace Build;
 
 public class OreListSingleton
 {
-  private static OreListSingleton? _oreListBuild;
+  private static OreListSingleton _oreListBuild;
 
   public static OreListSingleton Instance
   {

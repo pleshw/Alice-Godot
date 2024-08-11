@@ -7,10 +7,18 @@ where T : BaseEntity
 {
   public abstract T Actor { get; }
 
+  public string ActorSaveFolder
+  {
+    get
+    {
+      return $"{FileController.GodotSavesFolder}{Actor.SaveFolder}";
+    }
+  }
+
   public void SaveFile()
   {
     FileController.CreateProjectFile(
-                $"{FileController.GodotSavesFolder}{Actor.SaveFolder}/entity/{Actor.UniqueName}/",
+                $"{ActorSaveFolder}/entity/{Actor.UniqueName}/",
                 "actor.json",
                 Actor
         );
@@ -23,7 +31,7 @@ where T : BaseEntity
 
   public T LoadFile(string actorUniqueName)
   {
-    T? result = FileController.GetFileDeserialized<T>($"{FileController.GodotSavesFolder}{Actor.SaveFolder}/entity/{actorUniqueName}/actor.json");
+    T result = FileController.GetFileDeserialized<T>($"{ActorSaveFolder}/entity/{actorUniqueName}/actor.json");
 
     if (result != null)
     {
